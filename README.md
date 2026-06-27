@@ -100,4 +100,23 @@ GROUP BY
 
 <img width="1605" height="1010" alt="4" src="https://github.com/user-attachments/assets/2ec675d2-4c64-45bc-b472-fef3379efada" />
 
+# Задание 5*
 
+## SQL-запрос
+
+```sql
+SELECT
+    film.film_id,
+    film.title
+FROM film
+LEFT JOIN inventory
+    ON film.film_id = inventory.film_id
+LEFT JOIN rental
+    ON inventory.inventory_id = rental.inventory_id
+WHERE rental.rental_id IS NULL;
+```
+
+## Результат выполнения
+<img width="2310" height="2035" alt="5" src="https://github.com/user-attachments/assets/28b84ba6-0efa-49bc-847f-582b5bd4f53e" />
+
+<img width="1390" height="1307" alt="5-1" src="https://github.com/user-attachments/assets/0e3bfd01-e5b7-4d13-820a-d2b33a0bb124" />
