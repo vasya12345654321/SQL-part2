@@ -72,3 +72,32 @@ LIMIT 1;
 ## Результат выполнения
 
 <img width="1422" height="682" alt="3" src="https://github.com/user-attachments/assets/ae322a1c-2d21-409f-bde9-26a370b7afc4" />
+
+
+# Задание 4*
+
+## SQL-запрос
+
+```sql
+SELECT
+    staff.first_name,
+    staff.last_name,
+    COUNT(payment.payment_id) AS sales,
+    CASE
+        WHEN COUNT(payment.payment_id) > 8000 THEN 'YES'
+        ELSE 'NO'
+    END AS bonus
+FROM staff
+JOIN payment
+    ON staff.staff_id = payment.staff_id
+GROUP BY
+    staff.staff_id,
+    staff.first_name,
+    staff.last_name;
+```
+
+## Результат выполнения
+
+<img width="1605" height="1010" alt="4" src="https://github.com/user-attachments/assets/2ec675d2-4c64-45bc-b472-fef3379efada" />
+
+
