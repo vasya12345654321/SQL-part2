@@ -59,9 +59,16 @@ WHERE length > (
 ## SQL-запрос
 
 ```sql
-
+SELECT
+    MONTH(payment_date) AS month,
+    SUM(amount) AS total_amount,
+    COUNT(rental_id) AS rentals
+FROM payment
+GROUP BY MONTH(payment_date)
+ORDER BY total_amount DESC
+LIMIT 1;
 ```
 
 ## Результат выполнения
 
-(сюда вставить скриншот)
+<img width="1422" height="682" alt="3" src="https://github.com/user-attachments/assets/ae322a1c-2d21-409f-bde9-26a370b7afc4" />
