@@ -36,20 +36,23 @@ HAVING COUNT(customer.customer_id) > 300;
 <img width="2385" height="1195" alt="1" src="https://github.com/user-attachments/assets/84ab87cd-5ce3-4840-aec9-2cadf88ff3fb" />
 
 ---
-
 # Задание 2
 
 ## SQL-запрос
 
 ```sql
-
+SELECT COUNT(*)
+FROM film
+WHERE length > (
+    SELECT AVG(length)
+    FROM film
+);
 ```
 
 ## Результат выполнения
+ 
+ <img width="1487" height="625" alt="2" src="https://github.com/user-attachments/assets/b5fd8d9c-b2af-4404-b2bd-8f839774d538" />
 
-(сюда вставить скриншот)
-
----
 
 # Задание 3
 
